@@ -4,5 +4,8 @@ module grafos.grafosfinal {
 
 
     opens grafos.grafosfinal to javafx.fxml;
-    exports grafos.grafosfinal;
+    exports Controladores;
+    opens Controladores to javafx.fxml;
+    exports run;
+    opens run to javafx.fxml;
 }
