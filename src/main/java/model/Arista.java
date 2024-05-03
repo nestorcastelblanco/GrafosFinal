@@ -18,4 +18,8 @@ public class Arista {
         return nodoFin;
     }
 
+    public boolean conectaCon(Nodo nodo, Nodo otroNodo) {
+        // Verificar si esta arista conecta los nodos dados
+        return (nodoInicio == nodo && nodoFin == otroNodo) || (nodoInicio == otroNodo && nodoFin == nodo);
+    }
 }

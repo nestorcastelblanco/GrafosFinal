@@ -1,5 +1,7 @@
 package model;
 
+import run.GraphApp;
+
 public class Nodo {
     private String nombre;
     private double x;
@@ -21,5 +23,31 @@ public class Nodo {
 
     public double getY() {
         return y;
+    }
+
+    public boolean tieneAristaCon(Nodo otroNodo, Grafo grafo) {
+        // Verificar si hay una arista entre este nodo y otro nodo
+        for (Arista arista : grafo.getAristas()) {
+            if (arista.conectaCon(this, otroNodo)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int getGrado(Grafo grafo) {
+        // Calcular el grado del nodo
+        int grado = 0;
+        for (Arista arista : grafo.getAristas()) {
+            if (arista.getNodoInicio() == this || arista.getNodoFin() == this) {
+                grado++;
+            }
+        }
+        return grado;
+    }
+
+    public boolean esAdyacente(Nodo otroNodo, Grafo grafo) {
+        // Verificar si este nodo es adyacente al nodo dado
+        return this.tieneAristaCon(otroNodo,grafo);
     }
 }
