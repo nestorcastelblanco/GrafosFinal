@@ -1,5 +1,9 @@
-package run;
+package co.edu.uniquindio.grafosFinal.controladores;
 
+import co.edu.uniquindio.grafosFinal.modelo.Arista;
+import co.edu.uniquindio.grafosFinal.modelo.Grafo;
+import co.edu.uniquindio.grafosFinal.modelo.Matriz;
+import co.edu.uniquindio.grafosFinal.modelo.Nodo;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,21 +17,19 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.QuadCurve;
 import javafx.stage.Stage;
-import model.Arista;
-import model.Grafo;
-import model.Arista;
-import model.Grafo;
-import model.Matriz;
-import model.Nodo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
-public class GraphApp extends Application {
+public class InicioControlador extends Application {
     private Grafo grafo;
     private Pane panelGrafo;
     private HashMap<Arista, Double> mapaAngulo;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -438,9 +440,5 @@ public class GraphApp extends Application {
 
         // Volver a dibujar todos los nodos
         grafo.getNodos().forEach(this::dibujarNodo);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

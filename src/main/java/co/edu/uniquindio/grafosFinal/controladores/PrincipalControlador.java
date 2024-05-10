@@ -1,8 +1,10 @@
-package Controladores;
+package co.edu.uniquindio.grafosFinal.controladores;
 
+import co.edu.uniquindio.grafosFinal.modelo.Arista;
+import co.edu.uniquindio.grafosFinal.modelo.Grafo;
+import co.edu.uniquindio.grafosFinal.modelo.Nodo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -14,9 +16,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.QuadCurve;
-import model.Arista;
-import model.Grafo;
-import model.Nodo;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class PrincipalController implements Initializable {
+public class PrincipalControlador implements Initializable {
 
     private Grafo grafo;
     @FXML

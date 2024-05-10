@@ -1,6 +1,4 @@
-package model;
-
-import run.GraphApp;
+package co.edu.uniquindio.grafosFinal.modelo;
 
 public class Nodo {
     private String nombre;
@@ -48,6 +46,6 @@ public class Nodo {
 
     public boolean esAdyacente(Nodo otroNodo, Grafo grafo) {
         // Verificar si este nodo es adyacente al nodo dado
-        return this.tieneAristaCon(otroNodo,grafo);
+        return this.tieneAristaCon(otroNodo, grafo);
     }
 }

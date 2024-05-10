@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.grafosFinal.modelo;
 
 import java.util.*;
 
@@ -196,11 +196,11 @@ public class Grafo {
             for (Nodo nodo1 : getNodos()) {
                 for (Nodo nodo2 : getNodos()) {
                     // Solo considerar pares de nodos no adyacentes
-                    if (!nodo1.esAdyacente(nodo2,this)) {
+                    if (!nodo1.esAdyacente(nodo2, this)) {
                         // Calcular la suma de los grados de los nodos no adyacentes
                         int gradoTotal = nodo1.getGrado(this) + nodo2.getGrado(this);
                         // Si la suma de los grados es menor que el número total de nodos, el grafo no es Hamiltoniano
-                        if (!nodo1.esAdyacente(nodo2,this) && gradoTotal < getNodos().size()) {
+                        if (!nodo1.esAdyacente(nodo2, this) && gradoTotal < getNodos().size()) {
                             cumpleOre = false;
                             break;
                         }
@@ -257,6 +257,7 @@ public class Grafo {
         // Si no hay conflictos de asignación, el grafo es bipartito
         return true;
     }
+
     private boolean isHamiltoniano() {
         // Verificar si el grafo cumple con las condiciones de un grafo Hamiltoniano
 
@@ -276,11 +277,11 @@ public class Grafo {
         for (Nodo nodo1 : nodos) {
             for (Nodo nodo2 : nodos) {
                 // Solo considerar pares de nodos no adyacentes
-                if (!nodo1.esAdyacente(nodo2,this)) {
+                if (!nodo1.esAdyacente(nodo2, this)) {
                     // Calcular la suma de los grados de los nodos no adyacentes
                     int gradoTotal = nodo1.getGrado(this) + nodo2.getGrado(this);
                     // Si la suma de los grados es menor que el número total de nodos, el grafo no es Hamiltoniano
-                    if (!nodo1.esAdyacente(nodo2,this) && gradoTotal < nodos.size()) {
+                    if (!nodo1.esAdyacente(nodo2, this) && gradoTotal < nodos.size()) {
                         return false;
                     }
                 }
@@ -290,6 +291,7 @@ public class Grafo {
         // Si pasa todas las condiciones, el grafo es Hamiltoniano
         return true;
     }
+
     private Set<Nodo> getVecinos(Nodo nodo) {
         Set<Nodo> vecinos = new HashSet<>();
         for (Arista arista : aristas) {

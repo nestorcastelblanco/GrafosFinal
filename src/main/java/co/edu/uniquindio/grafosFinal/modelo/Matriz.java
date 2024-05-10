@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.grafosFinal.modelo;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;

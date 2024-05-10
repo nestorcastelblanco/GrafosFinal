@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.grafosFinal.modelo;
 
 public class Arista {
 
