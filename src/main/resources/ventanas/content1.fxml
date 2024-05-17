@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="10">
+    <children>
+        <Text text="Contenido 1"/>
+        <!-- Agrega más componentes aquí -->
+    </children>
+</VBox>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.grafosFinal.controladores.InicioControlador">
+    <SplitPane dividerPositions="0.5" prefHeight="450.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <!-- Panel izquierdo con contenido dinámico -->
+            <VBox>
+                <Pane fx:id="panelGrafo" onMouseClicked="#abrirDialogoAgregarNodo" prefHeight="390.0" prefWidth="446.0">
+                    <children>
+                        <!-- Espacio para el contenido dinámico del grafo -->
+                    </children>
+                </Pane>
+            </VBox>
+            <!-- Panel derecho con botones para operaciones con el grafo -->
+            <VBox alignment="CENTER" spacing="10">
+                <children>
+                    <Button fx:id="btnMatrizRelacion" onAction="#mostrarMatrizRelacion" text="Matriz de Relación" />
+                    <Button fx:id="btnGrafoConexo" onAction="#grafoConexo" prefHeight="25.0" prefWidth="117.0" text="Grafo Conexo" />
+                    <Button fx:id="btnIdentificarTipo" onAction="#identificarTipo" prefHeight="25.0" prefWidth="117.0" text="Identificar Tipo" />
+                    <Button fx:id="btnCircuitoEuleriano" onAction="#mostrarCircuitoEuleriano" text="Circuito Euleriano" />
+                    <Button fx:id="btnCircuitoHamiltoniano" onAction="#mostrarCircuitoHamiltoniano" text="Circuito Hamiltoniano" />
+                    <Button fx:id="btnIdentificarGrafoHamiltoniano" onAction="#identificarGrafoHamiltoniano" text="Grafo Hamiltoniano" />
+                    <Button fx:id="btnMatrizAdyacencia" onAction="#mostrarMatrizAdyacencia" text="Matriz de Adyacencia" />
+                </children>
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+            </VBox>
+        </items>
+    </SplitPane>
+    <!-- Botones debajo del panel izquierdo -->
+    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="420.0" spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="470.0">
+        <children>
+            <Button fx:id="btnCrearArista" onAction="#abrirDialogoCrearArista" text="Crear Arista" />
+            <Button fx:id="btnEliminarNodo" onAction="#abrirDialogoEliminarNodo" text="Eliminar Nodo" />
+            <Button fx:id="btnEliminarArista" onAction="#abrirDialogoEliminarArista" text="Eliminar Arista" />
+        </children>
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+    </HBox>
+</AnchorPane>
