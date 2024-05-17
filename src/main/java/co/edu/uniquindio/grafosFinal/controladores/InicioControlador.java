@@ -7,6 +7,7 @@ import co.edu.uniquindio.grafosFinal.modelo.Nodo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -16,15 +17,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.QuadCurve;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 public class InicioControlador implements Initializable{
 
     private Grafo grafo;
-
+    private Node contentOriginal;
     @FXML
-    private Pane panelGrafo;
+    private Pane panelGrafo, panelContent;
 
     @FXML
     private Button btnCrearArista;
@@ -37,6 +39,14 @@ public class InicioControlador implements Initializable{
 
     private HashMap<Arista, Double> mapaAngulo;
 
+    private static InicioControlador inicioControlador;
+
+    public static InicioControlador getInstance() {
+        if (inicioControlador == null) {
+            inicioControlador = new InicioControlador();
+        }
+        return inicioControlador;
+    }
     @FXML
     private void grafoConexo() {
         // Acción del botón "Grafo Conexo"
@@ -379,12 +389,37 @@ public class InicioControlador implements Initializable{
     }
 
     public void mostrarMatrizRelacion(ActionEvent event) {
+        contentOriginal = panelContent.getChildren().get(0);
+        loadContent("/ventanas/MatrizRelacion.fxml");
         Matriz.mostrarMatrizRelacion(grafo);
+    }
+
+    public void cargarAnterior(){
+        Node loader = panelContent.getChildren().get(0);
+        
+        // Obtiene la URL del archivo FXML cargado por el FXMLLoader
+        String direccionFXML = loader.getLocation().toString();
+    }
+    private void loadContent(String fxmlPath){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Node content = loader.load();
+
+            panelContent.getChildren().clear();
+            panelContent.getChildren().add(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void restaurarOriginal(){
+        panelContent.getChildren().clear();
+        panelContent.getChildren().add(contentOriginal);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         grafo = new Grafo();
         mapaAngulo = new HashMap<>();
+        contentOriginal = panelContent.getChildren().get(0);
     }
 }

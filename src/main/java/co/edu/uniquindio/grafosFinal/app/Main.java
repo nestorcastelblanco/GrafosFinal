@@ -15,6 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/ventanas/inicio.fxml"));
+
         primaryStage.setTitle("Inicio de sesión");
         primaryStage.setScene(new Scene(root, 900, 500));
         primaryStage.show();
