@@ -4,26 +4,44 @@ import co.edu.uniquindio.grafosFinal.modelo.Arista;
 import co.edu.uniquindio.grafosFinal.modelo.Grafo;
 import co.edu.uniquindio.grafosFinal.modelo.Matriz;
 import co.edu.uniquindio.grafosFinal.modelo.Nodo;
+<<<<<<< HEAD
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+=======
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.QuadCurve;
+import javafx.stage.Stage;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 public class InicioControlador implements Initializable{
+=======
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Optional;
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
 
+public class InicioControlador extends Application {
     private Grafo grafo;
+<<<<<<< HEAD
     private Node contentOriginal;
     @FXML
     private Pane panelGrafo, panelContent;
@@ -48,6 +66,91 @@ public class InicioControlador implements Initializable{
         return inicioControlador;
     }
     @FXML
+=======
+    private Pane panelGrafo;
+    private HashMap<Arista, Double> mapaAngulo;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        grafo = new Grafo();
+        mapaAngulo = new HashMap<>();
+
+        // Crear los botones en el borde izquierdo
+        VBox cajaIzquierda = new VBox(10);
+        cajaIzquierda.setAlignment(Pos.CENTER_LEFT);
+        cajaIzquierda.setPadding(new Insets(10));
+        Button botonMatrizRelacion = new Button("Matriz de Relación");
+        Button botonIdentificarCondiciones = new Button("Grafo Conexo");
+        Button botonTipo = new Button("Identificar Tipo");
+        Button botonCircuitoEuleriano = new Button("Circuito Euleriano");
+        establecerTamañoBoton(botonMatrizRelacion);
+        establecerTamañoBoton(botonIdentificarCondiciones);
+        establecerTamañoBoton(botonTipo);
+        establecerTamañoBoton(botonCircuitoEuleriano);
+        cajaIzquierda.getChildren().addAll(botonMatrizRelacion, botonIdentificarCondiciones, botonTipo, botonCircuitoEuleriano);
+
+        // Crear los botones en el borde derecho
+        VBox cajaDerecha = new VBox(10);
+        cajaDerecha.setAlignment(Pos.CENTER_RIGHT);
+        cajaDerecha.setPadding(new Insets(10));
+        Button botonCircuitoHamiltoniano = new Button("Circuito Hamiltoniano");
+        Button botonHamiltoniano = new Button("Grafo Hamiltoniano");
+        Button botonAlgoritmoConectividad = new Button("Matriz de Adyacencia");
+        establecerTamañoBoton(botonCircuitoHamiltoniano);
+        establecerTamañoBoton(botonHamiltoniano);
+        establecerTamañoBoton(botonAlgoritmoConectividad);
+        cajaDerecha.getChildren().addAll(botonHamiltoniano, botonAlgoritmoConectividad, botonCircuitoHamiltoniano);
+
+        // Crear el panel para dibujar el grafo
+        panelGrafo = new Pane();
+        panelGrafo.setStyle("-fx-background-color: white;");
+        panelGrafo.setOnMouseClicked(event -> abrirDialogoAgregarNodo(event.getX(), event.getY()));
+
+        // Crear botones de herramientas
+        Button botonCrearArista = new Button("Crear Arista");
+        Button botonEliminarNodo = new Button("Eliminar Nodo");
+        Button botonEliminarArista = new Button("Eliminar Arista");
+
+        // Manejadores de eventos para los botones de herramientas
+        botonCrearArista.setOnAction(event -> abrirDialogoCrearArista());
+        botonEliminarNodo.setOnAction(event -> abrirDialogoEliminarNodo());
+        botonEliminarArista.setOnAction(event -> abrirDialogoEliminarArista());
+
+        // Crear la barra de herramientas
+        HBox barraHerramientas = new HBox(10);
+        barraHerramientas.setAlignment(Pos.CENTER);
+        barraHerramientas.setPadding(new Insets(10));
+        barraHerramientas.getChildren().addAll(botonCrearArista, botonEliminarNodo, botonEliminarArista);
+
+        // Crear el layout principal
+        BorderPane raiz = new BorderPane();
+        raiz.setLeft(cajaIzquierda);
+        raiz.setRight(cajaDerecha);
+        raiz.setCenter(panelGrafo);
+        raiz.setBottom(barraHerramientas);
+
+        // Crear la escena
+        Scene scene = new Scene(raiz, 950, 600);
+
+        // Configurar el escenario
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Aplicación de Grafo");
+        primaryStage.show();
+
+        botonMatrizRelacion.setOnAction(event -> Matriz.mostrarMatrizRelacion(grafo));
+        botonIdentificarCondiciones.setOnAction(event -> grafoConexo());
+        botonTipo.setOnAction(event -> identificarTipo());
+        botonCircuitoEuleriano.setOnAction(event -> mostrarCircuitoEuleriano());
+        botonCircuitoHamiltoniano.setOnAction(event -> mostrarCircuitoHamiltoniano());
+        botonHamiltoniano.setOnAction(event -> identificarGrafoHamiltoniano());
+        botonAlgoritmoConectividad.setOnAction(event -> mostrarMatrizAdyacencia());
+    }
+
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
     private void grafoConexo() {
         // Acción del botón "Grafo Conexo"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -63,7 +166,6 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
     private void identificarTipo() {
         // Acción del botón "Identificar Tipo"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -78,7 +180,6 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
     private void mostrarCircuitoEuleriano() {
         // Acción del botón "Circuito Euleriano"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -93,7 +194,6 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
     private void mostrarCircuitoHamiltoniano() {
         // Acción del botón "Circuito Hamiltoniano"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -108,7 +208,6 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
     private void identificarGrafoHamiltoniano() {
         // Acción del botón "Grafo Hamiltoniano"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -123,7 +222,6 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
     private void mostrarMatrizAdyacencia() {
         // Acción del botón "Matriz de Adyacencia"
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
@@ -138,11 +236,13 @@ public class InicioControlador implements Initializable{
         alerta.showAndWait();
     }
 
-    @FXML
-    private void abrirDialogoAgregarNodo(MouseEvent event) {
-        double x = event.getX();
-        double y = event.getY();
+    private void establecerTamañoBoton(Button boton) {
+        // Establecer el tamaño máximo y mínimo del botón
+        boton.setMinWidth(135);
+        boton.setMaxWidth(135);
+    }
 
+    private void abrirDialogoAgregarNodo(double x, double y) {
         TextInputDialog dialogo = new TextInputDialog();
         dialogo.setTitle("Agregar Nodo");
         dialogo.setHeaderText(null);
@@ -150,6 +250,7 @@ public class InicioControlador implements Initializable{
 
         Optional<String> resultado = dialogo.showAndWait();
         resultado.ifPresent(nombre -> {
+            // Verificar si ya existe un nodo con el mismo nombre
             boolean nombreRepetido = grafo.getNodos().stream()
                     .anyMatch(nodo -> nodo.getNombre().equals(nombre));
             if (nombreRepetido) {
@@ -164,7 +265,6 @@ public class InicioControlador implements Initializable{
         });
     }
 
-    @FXML
     private void abrirDialogoCrearArista() {
         // Crear un diálogo para ingresar los nombres de los nodos
         TextInputDialog dialogo = new TextInputDialog();
@@ -232,7 +332,6 @@ public class InicioControlador implements Initializable{
         return angulo;
     }
 
-    @FXML
     private void abrirDialogoEliminarNodo() {
         // Crear un diálogo para ingresar el nombre del nodo a eliminar
         TextInputDialog dialogo = new TextInputDialog();
@@ -263,7 +362,6 @@ public class InicioControlador implements Initializable{
         });
     }
 
-    @FXML
     private void abrirDialogoEliminarArista() {
         // Crear un diálogo para ingresar los nombres de los nodos que están conectados por la arista a eliminar
         TextInputDialog dialogo = new TextInputDialog();
@@ -387,6 +485,7 @@ public class InicioControlador implements Initializable{
         // Volver a dibujar todos los nodos
         grafo.getNodos().forEach(this::dibujarNodo);
     }
+<<<<<<< HEAD
 
     public void mostrarMatrizRelacion(ActionEvent event) {
         contentOriginal = panelContent.getChildren().get(0);
@@ -422,4 +521,6 @@ public class InicioControlador implements Initializable{
         mapaAngulo = new HashMap<>();
         contentOriginal = panelContent.getChildren().get(0);
     }
+=======
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
 }

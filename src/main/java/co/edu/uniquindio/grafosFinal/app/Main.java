@@ -14,10 +14,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+<<<<<<< HEAD
         Parent root = FXMLLoader.load(getClass().getResource("/ventanas/inicio.fxml"));
 
+=======
+        Parent root = FXMLLoader.load(getClass().getResource("/ventanas/login.fxml"));
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
         primaryStage.setTitle("Inicio de sesión");
-        primaryStage.setScene(new Scene(root, 900, 500));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 }

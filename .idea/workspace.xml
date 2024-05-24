@@ -4,12 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="341e9c94-6ca9-4f11-9e47-1e38cb97c91b" name="Changes" comment="" />
+=======
+    <list default="true" id="18e1dbe8-8005-4ecb-a9ed-67485fe3da0b" name="Changes" comment="Up">
+      <change afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/app/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/controladores/InfoControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/controladores/LoginControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/controladores/RegistroControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/exceptions/AtributoVacioException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/exceptions/InformacionRepetidaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/GrafosFinal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/utils/ArchivoUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagenes/grafo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/serializable/usuarios.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ventanas/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ventanas/registro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controladores/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/controladores/PrincipalControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Arista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/Arista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Matriz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/Matriz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/modelo/Nodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/run/GraphApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/grafosFinal/controladores/InicioControlador.java" afterDir="false" />
+    </list>
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -28,9 +68,35 @@
     &quot;Maven.GrafosFinal [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+<<<<<<< HEAD
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+=======
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hulbe/IdeaProjects/GrafosFinal&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="grafos.grafosfinal" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+      </set>
+    </attachedChunks>
+  </component>
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,4 +108,12 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Up" />
+  </component>
+>>>>>>> parent of e67064e (Se actualizo la pagina principal)
 </project>

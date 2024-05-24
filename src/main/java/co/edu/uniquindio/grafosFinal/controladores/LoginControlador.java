@@ -31,7 +31,11 @@ public class LoginControlador {
 
             if (grafosFinal.verificarCredenciales(contrasena, username)) {
                 // Las credenciales son válidas, puedes cargar la siguiente ventana
-                grafosFinal.loadStage("/ventanas/inicio.fxml", event);
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                currentStage.close(); // Cierra la ventana actual
+
+                InicioControlador inicioControlador = new InicioControlador();
+                inicioControlador.start(new Stage());
                 mostrarMensaje(Alert.AlertType.INFORMATION, "El usuario " + username + " ha ingresado correctamente");
 
             } else {
